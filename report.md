@@ -15,6 +15,7 @@ I store the Braille alphabet in hex: https://en.wikipedia.org/wiki/Braille_ASCII
 
 ## Challenges:
 1. Had to use different approaches of preprocessing for both images: can not separate dots in 2nd image after using Harris algo.
+2. Had letters "o" detected as dots in 2nd image - decided to blur the image to make letters look worse
 2. Parameters tuning: some of parameters (e.g. for Harris, Canny) I was selecting blindly, by experiment. Would like to implement Harris or Canny by myself to gain a deeper understanding.
 3. The solution is not universal - very probably will not work for another image
 2. Translation algo is not the best:
