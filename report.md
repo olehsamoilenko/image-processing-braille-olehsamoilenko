@@ -1,5 +1,5 @@
 ## My approach:
-###s Preprocessing
+### Preprocessing
 1. Calculate corners using Harris algo (for the 1st image)
 2. Threshold
 3. Find edges using Canny algo (for the 2nd image)
@@ -7,11 +7,18 @@
 ### Dot extraction
 1. Find contours
 2. Filter contours by area 
-3. Check if the contour is a circle: $ S/P^2 = 1/(4*\pi) $
+3. Check if the contour is a circle: $$\frac{S}{P^2} = \frac{1}{4\pi}$$
 
 ### Translation
-**Magic!** (TODO: explain)<br>
-I store the Braille alphabet in hex: https://en.wikipedia.org/wiki/Braille_ASCII#Braille_ASCII_values
+1. Get minimal distance (between closest points)
+2. Align: if for 2 points difference between y coordinates is small enough (smaller than minimal distance), they are probably at the same row. Same for columns
+3. Convert to matrix for convenience. ⠕ will look like:
+$$\begin{bmatrix}
+1&0 \\
+0&1 \\
+1&0
+\end{bmatrix}$$
+4. I store the Braille alphabet in hex for converting (e.g. ⠕ is 0x4F is "o" letter): https://en.wikipedia.org/wiki/Braille_ASCII#Braille_ASCII_values
 
 ## Challenges:
 1. Had to use different approaches of preprocessing for both images: can not separate dots in 2nd image after using Harris algo.
