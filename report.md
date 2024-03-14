@@ -12,13 +12,15 @@
 ### Translation
 1. Get minimal distance (between closest points)
 2. Align: if for 2 points difference between y coordinates is small enough (smaller than minimal distance), they are probably at the same row. Same for columns
-3. Convert to matrix for convenience. ⠕ will look like:
-$$\begin{bmatrix}
+3. Convert to matrix for convenience, e.g. `⠕` will look like:
+```math
+\begin{bmatrix}
 1&0 \\
 0&1 \\
 1&0
-\end{bmatrix}$$
-4. I store the Braille alphabet in hex for converting (e.g. ⠕ is 0x4F is "o" letter): https://en.wikipedia.org/wiki/Braille_ASCII#Braille_ASCII_values
+\end{bmatrix}
+```
+4. I store the Braille alphabet in hex for converting (e.g. `⠕` is `0x4F` is "o" letter): https://en.wikipedia.org/wiki/Braille_ASCII#Braille_ASCII_values
 
 ## Challenges:
 1. Had to use different approaches of preprocessing for both images: can not separate dots in 2nd image after using Harris algo.
